@@ -1,36 +1,68 @@
+# Import the random module
 import random
 
+# Print the game title
 print("========= Number Guessing Game =========")
 
+# Create a list of numbers from 1 to 100
 numbers = list(range(1,101))
 
+# Select a random number from the list
 num = random.choice(numbers)
 
+# Set the starting score
 score = 100
 
+# Display starting score message
 print("Score start from 100")
 
+# Print separator line
 print("-----------------------------------")
 
+# Start the game loop
 while True:
 
+    # Take user input
     user = int(input("Enter the number : "))
+    
+    # Print separator line
     print("===================================")    
 
+    # Check if the guess is correct
     if (user == num):
+
+        # Display correct guess message
         print("You guess is right")
+
+        # End the loop
         break
     
+    # Check if the guess is smaller than the number
     elif (user < num):
+
+        # Hint for greater number
         print("Number is greater than")
+
+        # Decrease score by 10
         score = score - 10
+
+        # Print separator line
         print("===================================")
 
+    # Check if the guess is greater than the number
     elif (user > num):
+
+        # Hint for smaller number
         print("Number is less than")
+
+        # Decrease score by 10
         score = score - 10
+
+        # Print separator line
         print("===================================")
 
+# Display final score
 print("Score :",score)
 
+# Print ending separator line
 print("-----------------------------------")
